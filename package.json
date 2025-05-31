@@ -1,0 +1,24 @@
+{
+  "name": "invoice-creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "deploy": "tsc && clasp push",
+    "login": "clasp login",
+    "create": "clasp create --type sheets --title \"Invoice Generator\" --rootDir ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@google/clasp": "^3.0.6-alpha",
+    "@types/google-apps-script": "^1.0.97",
+    "typescript": "^5.8.3"
+  }
+}
