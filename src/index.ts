@@ -296,13 +296,11 @@ function calculateTotalHours(entries: WorkLogEntry[]): number {
  */
 function duplicateInvoiceTemplate(): GoogleAppsScript.Drive.File {
   const templateFile = DriveApp.getFileById(CONFIG.INVOICE.TEMPLATE_ID);
-
-  // 日付文字列を生成（yyyymmdd形式）
+  // 日付文字列を生成（yyyyMM形式）
   const now = new Date();
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, '0');
-  const lastDay = new Date(year, now.getMonth() + 1, 0).getDate();
-  const dateStr = `${year}${month}${lastDay}`;
+  const dateStr = `${year}${month}`;
   // 新規ファイル名
   const newFileName = `請求書_${dateStr}`;
 
